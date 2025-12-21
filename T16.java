@@ -1,9 +1,17 @@
 public class T16 {
-    public static void replaceAToC(String[] arr) {
+    public static void replaceAWithC(String[] arr) {
         final char FROM_CHAR = 'a';
         final char TO_CHAR = 'c';
 
+        if (arr == null || arr.length <= 0) {
+            return;
+        }
+
         for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == null) {
+                continue;
+            }
+
             arr[i] = arr[i].replace(FROM_CHAR, TO_CHAR);
         }
     }
@@ -20,7 +28,7 @@ public class T16 {
 
         Healpers.printStringArr("Words before change:", arr);
 
-        replaceAToC(arr);
+        replaceAWithC(arr);
 
         Healpers.printStringArr("Words after change:", arr);
     }

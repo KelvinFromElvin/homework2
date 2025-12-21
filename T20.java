@@ -1,11 +1,16 @@
 public class T20 {
 
     public static int sumCharsInPassword(String password, char[] chars) {
-        int[] counters = new int[chars.length];
         int sum = 0;
 
+        if (password == null || password.equals("") || chars == null || chars.length <= 0) {
+            return sum;
+        }
+
+        int[] counters = new int[chars.length];
+
         for (int i = 0; i < chars.length; i++) {
-            counters[i] = T11.countRepititionsOfCharInStr(password, chars[i]);
+            counters[i] = T11.countRepetitionsOfCharInStr(password, chars[i]);
         }
 
         for (int i = 0; i < counters.length; i++) {
@@ -19,6 +24,10 @@ public class T20 {
         final int MIN_PASSWORD_LEN = 9;
         final int MIN_SPECIAL_CHARS = 1;
         final int MIN_NUMBERS = 2;
+
+        if (password == null) {
+            return false;
+        }
 
         char[] validChars = { '!', '&', '%', '$' };
         char[] numbers = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
@@ -44,7 +53,15 @@ public class T20 {
     public static int findLongestWord(String[] arr) {
         int max = 0;
 
+        if (arr == null || arr.length <= 0) {
+            return max;
+        }
+
         for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == null) {
+                continue;
+            }
+
             if (arr[i].length() > max) {
                 max = arr[i].length();
             }
@@ -54,9 +71,13 @@ public class T20 {
     }
 
     public static String addSpacesToPrint(String word, int longestWorldLen) {
-        int padding = longestWorldLen - word.length();
-
         String str = "";
+
+        if (word == null) {
+            return str;
+        }
+
+        int padding = longestWorldLen - word.length();
 
         for (int i = 0; i < padding; i++) {
             str += " ";
@@ -66,10 +87,6 @@ public class T20 {
     }
 
     public static void main(String[] args) {
-        // String password = "asd";
-
-        // boolean result = isPasswordIsStrong(password);
-
         String[] passwords = new String[] {
                 "12!fadwfe",
                 "abc",

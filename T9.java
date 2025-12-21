@@ -5,6 +5,10 @@ public class T9 {
         final int EQUALS_TO_IDX = 1;
         final int SMALLER_THEN_IDX = 0;
 
+        if (arr == null || arr.length <= 0) {
+            return new int[0];
+        }
+
         int[] counters = new int[COUNTERS_LEN];
 
         for (int i = 0; i < arr.length; i++) {

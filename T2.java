@@ -1,5 +1,9 @@
 public class T2 {
     public static int[] concatArrays(int[] arr1, int[] arr2) {
+        if (arr1 == null || arr2 == null) {
+            return new int[0];
+        }
+
         int[] bigArr = new int[arr1.length + arr2.length];
 
         int bigArrIdx = 0;

@@ -1,6 +1,10 @@
 public class T11 {
-    public static int countRepititionsOfCharInStr(String str, char toCheck) {
+    public static int countRepetitionsOfCharInStr(String str, char toCheck) {
         int count = 0;
+
+        if (str == null || str.equals("")) {
+            return count;
+        }
 
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == toCheck) {
@@ -18,6 +22,6 @@ public class T11 {
         Healpers.printExTitle("Targil 11");
 
         Healpers.printf("The string _§blue%s_§ contains _§blue%c_§, _§purple%d_§ times%n", str, toCheck,
-                countRepititionsOfCharInStr(str, toCheck));
+                countRepetitionsOfCharInStr(str, toCheck));
     }
 }

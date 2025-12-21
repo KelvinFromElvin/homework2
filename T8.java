@@ -1,8 +1,13 @@
 public class T8 {
     public static final int NOT_FOUND = -1;
+    public static final int INVALID_ARRAY = -2;
 
-    public static int getIdxOfSumBiggerThenNum(int[] arr, int num) {
+    public static int getIdxWhereCumulativeSumExceedsNum(int[] arr, int num) {
         int sum = 0;
+
+        if (arr == null || arr.length <= 0) {
+            return INVALID_ARRAY;
+        }
 
         for (int i = 0; i < arr.length; i++) {
             sum += arr[i];
@@ -20,6 +25,6 @@ public class T8 {
         Healpers.printExTitle("Targil 8");
 
         Healpers.printArrWithTitle(arr, "arr");
-        System.out.println("The idx is: " + getIdxOfSumBiggerThenNum(arr, 12));
+        Healpers.printf("The idx is: _§blue%s_§%n", getIdxWhereCumulativeSumExceedsNum(arr, 12));
     }
 }

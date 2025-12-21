@@ -1,5 +1,9 @@
 public class T3 {
     public static int[] createArrayOfUniqueItems(int[] arr) {
+        if (arr == null || arr.length <= 0) {
+            return new int[0];
+        }
+
         int[] uniqueArr;
         int[] arrDup = new int[arr.length];
         int arrDupIdx = 0;
@@ -7,7 +11,7 @@ public class T3 {
 
         for (int i = 0; i < arr.length; i++) {
             isInArr = false;
-            for (int j = 0; j < arrDup.length; j++) {
+            for (int j = 0; j < arrDup.length && j < arrDupIdx; j++) {
                 if (arr[i] == arrDup[j]) {
                     isInArr = true;
                     break;

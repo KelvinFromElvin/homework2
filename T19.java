@@ -1,12 +1,19 @@
 public class T19 {
+    public static final char INVALID_STR = '?';
+
     public static char findCharWithLeastPeripitions(String str) {
         int minIdx = 0;
-        int min = T11.countRepititionsOfCharInStr(str, str.charAt(minIdx));
+
+        if (str == null || str.equals("")) {
+            return INVALID_STR;
+        }
+
+        int min = T11.countRepetitionsOfCharInStr(str, str.charAt(minIdx));
 
         int currentCharCounter;
 
         for (int i = 1; i < str.length(); i++) {
-            currentCharCounter = T11.countRepititionsOfCharInStr(str, str.charAt(i));
+            currentCharCounter = T11.countRepetitionsOfCharInStr(str, str.charAt(i));
 
             if (min > currentCharCounter) {
                 min = currentCharCounter;

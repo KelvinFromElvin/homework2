@@ -1,6 +1,10 @@
 public class T6 {
-    public static int countRepititionsOfNumInArr(int[] arr, int num) {
+    public static int countRepetitionsOfNumberInArray(int[] arr, int num) {
         int count = 0;
+
+        if (arr == null || arr.length <= 0) {
+            return count;
+        }
 
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == num) {
@@ -18,6 +22,7 @@ public class T6 {
         Healpers.printExTitle("Targil 6");
 
         Healpers.printArrWithTitle(arr, "arr");
-        System.out.printf("The number %d found %d times in arr%n", num, countRepititionsOfNumInArr(arr, num));
+        Healpers.printf("The number _§yellow%d_§ found _§blue%d_§ times in arr%n", num,
+                countRepetitionsOfNumberInArray(arr, num));
     }
 }

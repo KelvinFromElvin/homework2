@@ -1,9 +1,13 @@
 public class T13_1 {
-    public static int countStringRepitionInArr(String[] arr, String toMatch) {
+    public static int countStringRepetitionInArr(String[] arr, String toMatch) {
         int count = 0;
 
+        if (arr == null || arr.length <= 0 || toMatch == null) {
+            return count;
+        }
+
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i].contains(toMatch)) {
+            if (arr[i] != null && arr[i].contains(toMatch)) {
                 count++;
             }
         }
@@ -18,6 +22,6 @@ public class T13_1 {
         Healpers.printExTitle("Targil T13-1");
 
         Healpers.printf("The word _§blue%s_§ was found _§cyan%d_§ times.%n", word,
-                countStringRepitionInArr(words, word));
+                countStringRepetitionInArr(words, word));
     }
 }

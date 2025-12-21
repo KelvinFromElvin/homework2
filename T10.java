@@ -1,5 +1,9 @@
 public class T10 {
-        public static boolean isStartsAndEndsWithSameChar(String str1, String str2) {
+        public static boolean startsAndEndsWithSameChar(String str1, String str2) {
+                if (str1 == null || str2 == null) {
+                        return false;
+                }
+
                 if (str1.length() != str2.length()) {
                         return false;
                 }
@@ -27,21 +31,9 @@ public class T10 {
 
                 Healpers.printExTitle("Targil 10");
 
-                printResult(str1, str2, isStartsAndEndsWithSameChar(str1, str2));
-                printResult(strWrong1, strWrong2, isStartsAndEndsWithSameChar(strWrong1, strWrong2));
-                printResult(strWrong3, strWrong4, isStartsAndEndsWithSameChar(strWrong3, strWrong4));
-                printResult(strWrong5, strWrong6, isStartsAndEndsWithSameChar(strWrong5, strWrong6));
-
-                // Healpers.printf("%s # %s = _§%s_§%n",
-                // str1, str2, isStartsAndEndsWithSameChar(str1, str2));
-
-                // Healpers.printf("%s # %s = %s%n",
-                // strWrong1, strWrong2, isStartsAndEndsWithSameChar(strWrong1, strWrong2));
-
-                // Healpers.printf("%s # %s = %s%n",
-                // strWrong3, strWrong4, isStartsAndEndsWithSameChar(strWrong3, strWrong4));
-
-                // Healpers.printf("%s # %s = %s%n",
-                // strWrong5, strWrong6, isStartsAndEndsWithSameChar(strWrong5, strWrong6));
+                printResult(str1, str2, startsAndEndsWithSameChar(str1, str2));
+                printResult(strWrong1, strWrong2, startsAndEndsWithSameChar(strWrong1, strWrong2));
+                printResult(strWrong3, strWrong4, startsAndEndsWithSameChar(strWrong3, strWrong4));
+                printResult(strWrong5, strWrong6, startsAndEndsWithSameChar(strWrong5, strWrong6));
         }
 }

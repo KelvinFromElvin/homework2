@@ -4,6 +4,10 @@ public class T13_2 {
         String optoStr = "";
         int i = 0;
 
+        if (str1 == null || str2 == null) {
+            return optoStr;
+        }
+
         if (str1.length() > str2.length()) {
             longStr = str1;
             shortStr = str2;

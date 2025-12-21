@@ -1,5 +1,9 @@
 public class T1 {
-    public static boolean doesArrayContainsNumGreaterThenNum(int[] arr, int num) {
+    public static boolean containsNumberGreaterThenNum(int[] arr, int num) {
+        if (arr == null || arr.length <= 0) {
+            return false;
+        }
+
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > num) {
                 return true;
@@ -14,7 +18,7 @@ public class T1 {
 
         Healpers.printExTitle("Targil 1");
 
-        Healpers.printf("Checking for 5: _§blue%s_§%n", doesArrayContainsNumGreaterThenNum(arr, 5));
-        Healpers.printf("Checking for 10: _§red%s_§%n", doesArrayContainsNumGreaterThenNum(arr, 10));
+        Healpers.printf("Checking for 5: _§blue%s_§%n", containsNumberGreaterThenNum(arr, 5));
+        Healpers.printf("Checking for 10: _§red%s_§%n", containsNumberGreaterThenNum(arr, 10));
     }
 }

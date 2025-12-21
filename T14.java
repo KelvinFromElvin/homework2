@@ -5,6 +5,11 @@ public class T14 {
         int sum = 0;
         double avg;
 
+        if (arr == null || arr.length <= 0) {
+            Healpers.printf("_§redPlease provide an array with values_§");
+            return;
+        }
+
         // sum all numbers
         for (int i = 0; i < arr.length; i++) {
             sum += arr[i];

@@ -1,10 +1,15 @@
 public class T5 {
-    public static final int NOT_SOMMIT = -1;
+    public static final int NOT_SUMMIT = -1;
+    public static final int INVALID_ARRAY = -2;
 
     public static int getSummit(int[] arr) {
-        int summitIdx = NOT_SOMMIT;
+        int summitIdx = NOT_SUMMIT;
 
         int i = 0;
+
+        if (arr == null || arr.length <= 0) {
+            return INVALID_ARRAY;
+        }
 
         // finding the heights number in sequence
         for (; i < arr.length - 1; i++) {
@@ -17,7 +22,7 @@ public class T5 {
         // checking if there is broken sequence
         for (; i < arr.length - 1; i++) {
             if (arr[i] < arr[i + 1]) {
-                summitIdx = NOT_SOMMIT;
+                summitIdx = NOT_SUMMIT;
                 break;
             }
         }
@@ -33,12 +38,12 @@ public class T5 {
         Healpers.printExTitle("Targil 5");
 
         Healpers.printArrWithTitle(arr, "arr");
-        System.out.println("Summit index: " + getSummit(arr));
+        Healpers.printf("_§blueSummit index:_§ %s%n", getSummit(arr));
 
         Healpers.printArrWithTitle(arrWrong, "arrWrong");
-        System.out.println("Summit index: " + getSummit(arrWrong));
+        Healpers.printf("_§blueSummit index:_§ %s%n", getSummit(arrWrong));
 
         Healpers.printArrWithTitle(arrWrong2, "arrWrong2");
-        System.out.println("Summit index: " + getSummit(arrWrong2));
+        Healpers.printf("_§blueSummit index:_§ %s%n", getSummit(arrWrong2));
     }
 }
