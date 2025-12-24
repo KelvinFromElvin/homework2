@@ -19,6 +19,10 @@ public class T5 {
             }
         }
 
+        if (summitIdx == 0) {
+            return NOT_SUMMIT;
+        }
+
         // checking if there is broken sequence
         for (; i < arr.length - 1; i++) {
             if (arr[i] < arr[i + 1]) {
@@ -33,7 +37,9 @@ public class T5 {
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3, 2, 1 };
         int[] arrWrong = { 1, 2, 3, 2, 3 };
-        int[] arrWrong2 = { 1, 2, 3 };
+        int[] arrWrong2 = { 1, 2, 3, 4, 5 };
+        int[] arrWrong3 = { 3, 2, 1 };
+        int[] arrWrong4 = { 1, 2, 1, 2 };
 
         Healpers.printExTitle("Targil 5");
 
@@ -45,5 +51,11 @@ public class T5 {
 
         Healpers.printArrWithTitle(arrWrong2, "arrWrong2");
         Healpers.printf("_§blueSummit index:_§ %s%n", getSummit(arrWrong2));
+
+        Healpers.printArrWithTitle(arrWrong3, "arrWrong3");
+        Healpers.printf("_§blueSummit index:_§ %s%n", getSummit(arrWrong3));
+
+        Healpers.printArrWithTitle(arrWrong4, "arrWrong4");
+        Healpers.printf("_§blueSummit index:_§ %s%n", getSummit(arrWrong4));
     }
 }
