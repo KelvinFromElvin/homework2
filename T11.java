@@ -15,13 +15,35 @@ public class T11 {
         return count;
     }
 
+    public static int countRepetitionsOfCharInArr(String[] arr, char toCheck) {
+        int count = 0;
+
+        if (arr == null || arr.length <= 0) {
+            return count;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == null || arr[i] == "") {
+                continue;
+            }
+
+            count += countRepetitionsOfCharInStr(arr[i], toCheck);
+        }
+
+        return count;
+    }
+
     public static void main(String[] args) {
-        String str = "abcded";
-        char toCheck = 'd';
+        String[] arr = new String[] {
+                "aaabbb",
+                "abbb",
+                "c"
+        };
+        char toCheck = 'a';
 
         Healpers.printExTitle("Targil 11");
 
-        Healpers.printf("The string _§blue%s_§ contains _§blue%c_§, _§purple%d_§ times%n", str, toCheck,
-                countRepetitionsOfCharInStr(str, toCheck));
+        Healpers.printf("The array contains _§blue%c_§, _§purple%d_§ times%n", toCheck,
+                countRepetitionsOfCharInArr(arr, toCheck));
     }
 }
